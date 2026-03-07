@@ -67,21 +67,25 @@ html, body {
 .login {
     font-size: 2rem;
     text-align: center;
-    font-size: clamp(1.8vw, 2.5vw, 3.1vw);
+    font-size: clamp(1.6vw, 2.4vw, 2.8vw);
 
 }
 
 .informações {
-    font-size: clamp(1.2vw, 1.5vw, 1.3vw);
+    display: flex;
+    font-size: clamp(0.8vw, 1vw, 1.1vw);
+    flex-direction: column;
+
 
 }
 
 input {
-    width: 22vw;
-    height: 6.5vh;
+    width: 20vw;
+    height: 6vh;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: clamp(0.8vw, 1vw, 1.1vw);
+    padding-left: 8px;
     
 }
 
