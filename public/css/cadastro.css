@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html, body {
+    background-color: #FFEAC9;
+    height: 100%;
+}
+
+.main{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+
+}
+
+
+/* PARTE DAS IMAGENS CHARMANDER*/
+
+.container-imgs img {
+    position: absolute;
+}
+
+.fundo {
+    width: 38.11%;
+    top:14%;
+    left: 0%;
+    z-index: 2;
+
+}
+
+.particulas {
+   width: 80%;
+    top: 4%;
+    left: 8%;
+    z-index: 1;
+}
+
+.charmander {
+    width: 35%;
+    top: 18%;
+    left: 8%;
+    z-index: 3;
+}
+
+.charmander {
+    animation: crescer 1.2s ease-out forwards;
+}
+
+@keyframes crescer {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* PARTE DO CADASTRO */
+.container-login {
+    display: flex;
+    position: relative;
+    background: linear-gradient(to bottom right, #FF5E00, #FAAD69);
+    color: white;
+    height: 68%;
+    width: 29%;     
+    top: 16%;
+    left: 5%;
+    border-radius: 5%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+
+.login {
+    text-align: center;
+    font-size: clamp(1.6vw, 2.4vw, 2.8vw);
+
+}
+
+.informações {
+    display: flex;
+    font-size: clamp(0.8vw, 1vw, 1.1vw);
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+input {
+    width: 20vw;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(0.8vw, 1vw, 1.1vw);
+    padding-left: 15px;
+    
+}
+
+.ipt{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+
+   button{
+    width: 50%;
+    height: 8%;
+    border: none;
+    border-radius: 20px;
+    font-size: clamp(1.2vw, 1.5vw, 1.8vw);
+    color: #ff7700;
+    padding: 0;
+}
+     
+  /* IPAD  MINI */
+
+
+  @media (max-width: 1024px){
+
+   .main{
+    display: flex;
+    justify-content: center;
+}
+
+
+    .container-login{
+    position: sticky;
+    width: 57vw;
+    height: 76vw;
+}
+
+    .login{
+    font-size: 35px;
+
+    }
+
+    input {
+    width: 320px;
+    height: 40px;
+}
+
+    .ipt{
+        font-size: 18px;
+
+    }
+
+.fundo {
+    width: 60%;
+    top:51%;
+    left: 8%;
+    z-index: 2;
+
+}
+
+.particulas {
+   width: 100%;
+    top: 50%;
+    left: 2%;
+    z-index: 1;
+}
+
+.charmander {
+    width: 45%;
+    top: 65%;
+    left: 2%;
+    z-index: 3;
+    transform: scaleX(-1) rotate(-15deg);
+
+}
+
+button{
+    font-size: 22px;
+}
+  }
+          
+
+          
