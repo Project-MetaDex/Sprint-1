@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MetaDex | Login</title>
+
+    <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+</head>
+
+<body onload="listar()">
+
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container-login">
+            
+            <div class="sessao-imagem">
+                <div class="fundo-lava"></div>
+                <img src="./assets/CharizardLogin-removebg-preview.png" alt="Charizard" class="img-pokemon">
+            </div>
+
+            <div class="sessao-formulario">
+                <div class="cartao-login">
+                    <h1>LOGIN</h1>
+                    
+                    <div class="campo-input">
+                        <label for="nome_input">NOME</label>
+                        <input type="text" id="nome_input" autocomplete="off" placeholder="Seu nome">
+                    </div>
+
+                    <div class="campo-input">
+                        <label for="senha_input">SENHA</label>
+                        <input type="password" id="senha_input" autocomplete="off" placeholder="Sua senha">
+                    </div>
+
+                    <button onclick="entrar()">ENTRAR</button>
+                    
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
+
+<script>
+    function entrar() {
+        var nomeVar = nome_input.value;
+        var senhaVar = senha_input.value;
+
+        if (nomeVar == "" || senhaVar == "") {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = "Preencha todos os campos para entrar.";
+            setTimeout(sumirMensagem, 5000);
+            return false;
+        } 
+
+        console.log("FORM LOGIN: ", nomeVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                
+                cardErro.style.display = "block";
+                cardErro.style.borderColor = "green";
+                mensagem_erro.style.color = "green";
+                mensagem_erro.innerHTML = "Login realizado com sucesso! Redirecionando...";
+                
+                setTimeout(function () {
+                    window.location = "index.html"; 
+                }, 1500); 
+
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    cardErro.style.display = "block";
+                    cardErro.style.borderColor = "red";
+                    mensagem_erro.style.color = "red";
+                    mensagem_erro.innerHTML = texto;
+                    setTimeout(sumirMensagem, 5000);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+    }
+</script>
