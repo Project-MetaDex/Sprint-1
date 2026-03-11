@@ -169,13 +169,11 @@ input {
     z-index: 1;
 }
 
-
 .charmander {
     width: 45%;
     top: 65%;
     left: 2%;
     z-index: 3;
-    animation: none;
     transform: scaleX(-1) rotate(-15deg);
 
 }
