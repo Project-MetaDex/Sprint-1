@@ -17,6 +17,12 @@ html, body {
 
 }
 
+input, button{
+
+    background-color: #fff;
+
+}
+
 
 /* PARTE DAS IMAGENS CHARMANDER*/
 
@@ -126,6 +132,129 @@ input {
 
 
   @media (max-width: 1024px){
+
+    .Nav-Container{
+
+        height: 8vw;
+        justify-content: space-between;
+
+    }
+
+    #options{
+
+        display: flex;
+        padding-left: 10%;
+        width: 15%;
+
+    }
+        
+    .Nav-Options {
+
+        display: none;
+        
+    }
+
+    .Login{
+
+        display: none;
+
+    }
+
+    .Cadastro {
+
+        font-size: 1.2vw;
+
+    }
+
+    .Side-Container{
+
+        position: fixed;
+        left: 0;
+        z-index: 1000;
+        background-color: #343334;
+        width: 50vw;
+        height: 100vh;
+
+    }
+
+    .Side-Flex{
+
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 5%;
+
+    }
+
+    #Close-Side{
+
+        width: 7vw;
+        position: absolute;
+        right: 5%;
+
+    }
+
+    .Perfil {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5%;
+        gap: 5%;
+
+    }
+
+    .Perfil img {
+
+        width: 20vw;
+
+    }
+
+    .Button-Side {
+
+        color: #FFFFFF;
+        font-size: 2vw;
+        font-weight: 600;
+        width: 20vw;
+        height: 7vw;
+        border-radius: 10px;
+        border: 2px solid #FFF;
+        cursor: pointer;
+        background-color: var(--Azul-miraidon);
+
+    }
+
+    .Side-Options {
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        color: #fff;
+        font-size: 3vw;
+        font-weight: 600;
+        gap: 5%;
+        
+    }
+
+    .Side-Logo{
+
+        position: absolute;
+        bottom: 5%;
+        width: 15vw;
+
+    }
+
+    .Selected {
+
+        display: flex;
+        align-items: center;
+        gap: 5%;
+
+    }
 
    .main{
     display: flex;
